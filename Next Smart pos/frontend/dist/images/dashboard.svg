@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 600" width="960" height="600" role="img" aria-label="Live dashboard screen">
+  <defs>
+    <linearGradient id="nav" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#062B5C"/>
+      <stop offset="1" stop-color="#087FF5"/>
+    </linearGradient>
+    <linearGradient id="bar" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#087FF5"/>
+      <stop offset="1" stop-color="#16C784"/>
+    </linearGradient>
+  </defs>
+  <rect width="960" height="600" fill="#F5F7FA"/>
+  <rect x="0" y="0" width="960" height="56" fill="url(#nav)"/>
+  <circle cx="34" cy="28" r="12" fill="#16C784"/>
+  <text x="56" y="34" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700" fill="#FFFFFF">SmartBiz</text>
+  <rect x="780" y="16" width="150" height="24" rx="12" fill="#FFFFFF" opacity="0.18"/>
+  <rect x="0" y="56" width="200" height="544" fill="#062B5C"/>
+  <g fill="#C7DBF5" font-family="Segoe UI, Arial, sans-serif" font-size="13">
+    <rect x="16" y="80" width="168" height="32" rx="6" fill="#16C784" opacity="0.22"/>
+    <text x="28" y="101" fill="#FFFFFF" font-weight="600">Dashboard</text>
+    <text x="28" y="145">Point of Sale</text>
+    <text x="28" y="179">Invoices</text>
+    <text x="28" y="213">Inventory</text>
+    <text x="28" y="247">Customers</text>
+    <text x="28" y="281">Reports</text>
+    <text x="28" y="315">Expenses</text>
+  </g>
+  <text x="228" y="102" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="700" fill="#0F172A">Live dashboard</text>
+  <text x="228" y="126" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#64748B">Sales, collections, expenses and profit from your own transactions</text>
+  <g font-family="Segoe UI, Arial, sans-serif">
+    <g>
+      <rect x="228" y="150" width="168" height="96" rx="10" fill="#FFFFFF" stroke="#E2E8F0"/>
+      <text x="244" y="178" font-size="12" fill="#64748B">TODAY&#39;S SALES</text>
+      <text x="244" y="212" font-size="26" font-weight="700" fill="#087FF5">KSh 84,300</text>
+    </g>
+    <g>
+      <rect x="412" y="150" width="168" height="96" rx="10" fill="#FFFFFF" stroke="#E2E8F0"/>
+      <text x="428" y="178" font-size="12" fill="#64748B">GROSS PROFIT</text>
+      <text x="428" y="212" font-size="26" font-weight="700" fill="#16C784">KSh 27,940</text>
+    </g>
+    <g>
+      <rect x="596" y="150" width="168" height="96" rx="10" fill="#FFFFFF" stroke="#E2E8F0"/>
+      <text x="612" y="178" font-size="12" fill="#64748B">INVOICES PAID</text>
+      <text x="612" y="212" font-size="26" font-weight="700" fill="#0F172A">38</text>
+    </g>
+    <g>
+      <rect x="780" y="150" width="152" height="96" rx="10" fill="#FFFFFF" stroke="#E2E8F0"/>
+      <text x="796" y="178" font-size="12" fill="#64748B">OUTSTANDING</text>
+      <text x="796" y="212" font-size="26" font-weight="700" fill="#F59E0B">KSh 12,900</text>
+    </g>
+  </g>
+  <rect x="228" y="266" width="440" height="290" rx="10" fill="#FFFFFF" stroke="#E2E8F0"/>
+  <text x="248" y="296" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="600" fill="#0F172A">Sales trend</text>
+  <g fill="url(#bar)">
+    <rect x="256" y="430" width="30" height="90" rx="4"/>
+    <rect x="300" y="404" width="30" height="116" rx="4"/>
+    <rect x="344" y="420" width="30" height="100" rx="4"/>
+    <rect x="388" y="366" width="30" height="154" rx="4"/>
+    <rect x="432" y="342" width="30" height="178" rx="4"/>
+    <rect x="476" y="376" width="30" height="144" rx="4"/>
+    <rect x="520" y="318" width="30" height="202" rx="4"/>
+    <rect x="564" y="336" width="30" height="184" rx="4"/>
+  </g>
+  <path d="M271 430 L315 404 L359 420 L403 366 L447 342 L491 376 L535 318 L579 336" fill="none" stroke="#087FF5" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="688" y="266" width="244" height="290" rx="10" fill="#FFFFFF" stroke="#E2E8F0"/>
+  <text x="708" y="296" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="600" fill="#0F172A">Recent sales</text>
+  <g font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#0F172A">
+    <rect x="708" y="312" width="204" height="48" rx="8" fill="#F8FAFC"/>
+    <text x="722" y="333" fill="#64748B" font-size="11">INV-1042 &#183; Walk-in</text>
+    <text x="722" y="350" font-weight="600">KSh 6,400</text>
+    <rect x="708" y="370" width="204" height="48" rx="8" fill="#F8FAFC"/>
+    <text x="722" y="391" fill="#64748B" font-size="11">INV-1041 &#183; M. Otieno</text>
+    <text x="722" y="408" font-weight="600">KSh 12,150</text>
+    <rect x="708" y="428" width="204" height="48" rx="8" fill="#F8FAFC"/>
+    <text x="722" y="449" fill="#64748B" font-size="11">INV-1040 &#183; Acme Ltd</text>
+    <text x="722" y="466" font-weight="600">KSh 23,900</text>
+  </g>
+</svg>
