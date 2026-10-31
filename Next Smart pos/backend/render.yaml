@@ -1,0 +1,97 @@
+# Render Blueprint for Next-Smart-Pos
+#
+# Deploys two services from this repo:
+#   1. `nsp-backend`  - Flask API + PostgreSQL database
+#   2. `nsp-frontend` - Vite SPA (built to static assets, served via a
+#                       lightweight static server in the same service)
+#
+# Commit this file at the repository root. After importing the repo into
+# Render, the blueprint provisions the two web services automatically.
+#
+# The Postgres instance is managed externally
+# (dpg-dbilglgae00c73c1fpag-a / smartposdb_g4mk); its connection string is
+# passed to the backend service as the `DATABASE_URL` env var.
+
+services:
+  # ---------------------------------------------------------------- Backend
+  - type: web
+    name: nsp-backend
+    region: oregon
+    plan: starter
+    env: python
+    buildCommand: |
+      # Render's Python builder installs the root requirements.txt
+      # (which forwards to backend/requirements.txt) automatically.
+      # Nothing else to do here - the preDeployCommand runs migrations.
+      echo "deps installed by Render builder"
+    startCommand: |
+      bash backend/start.sh
+    preDeployCommand: |
+      cd backend
+      FLASK_APP=run:app flask db upgrade
+    healthCheckPath: /api/health
+    envVariables:
+      # Python runtime
+      PYTHON_VERSION: "3.11"
+      FLASK_ENV: production
+      # Secrets - override these in the Render dashboard with strong values.
+      SECRET_KEY: ! SECRET_KEY
+      JWT_SECRET_KEY: ! JWT_SECRET_KEY
+      JWT_ALGORITHM: HS256
+      # Database - externally-managed Render Postgres instance
+      # dpg-dbilglgae00c73c1fpag-a / smartposdb_g4mk. Paste the URL exactly
+      # as Render shows it; the app rewrites `postgresql://` to
+      # `postgresql+psycopg2://` automatically (see app/config.py).
+      DATABASE_URL: ! DATABASE_URL
+      # CORS - the frontend origin after it is deployed.
+      CORS_ORIGINS: ! CORS_ORIGINS
+      # Rate limits
+      RATELIMIT_ENABLED: "1"
+      RATELIMIT_STORAGE_URI: memory://
+      AUTH_RATELIMIT: "30 per minute"
+      REGISTER_RATELIMIT: "10 per minute"
+      LOGIN_RATELIMIT: "20 per minute"
+      REFRESH_RATELIMIT: "30 per minute"
+      FORGOT_PASSWORD_RATELIMIT: "10 per minute"
+      PRIVILEGED_AUTH_RATELIMIT: "10 per minute"
+      # Password policy
+      PASSWORD_MIN_LENGTH: "8"
+      PASSWORD_MAX_LENGTH: "128"
+      # Uploads - served by the app at /uploads/<filename>
+      UPLOAD_FOLDER: /opt/render/project/backend/uploads
+      MAX_CONTENT_LENGTH: "8388608"
+      # Superadmin (cross-tenant) access - restrict to a strong token + IP list.
+      SUPERADMIN_API_TOKEN: ! SUPERADMIN_API_TOKEN
+      SUPERADMIN_ALLOWED_IPS: ! SUPERADMIN_ALLOWED_IPS
+      # M-Pesa (Safaricom Daraja) global settings
+      MPESA_HTTP_TIMEOUT: "30"
+      MPESA_CALLBACK_TOKEN: ! MPESA_CALLBACK_TOKEN
+      MPESA_DEFAULT_COUNTRY_CODE: "254"
+      MPESA_TOKEN_EXPIRY_MARGIN: "60"
+      # Logging
+      SQL_ECHO: "0"
+    git:
+      branch: main
+
+  # -------------------------------------------------------------- Frontend
+  - type: web
+    name: nsp-frontend
+    region: oregon
+    plan: starter
+    env: node
+    buildCommand: |
+      cd frontend
+      npm ci
+      npm install -D serve
+      npm run build
+    startCommand: |
+      cd frontend
+      npx serve -s dist -l $PORT
+    buildFilter:
+      paths:
+        - frontend/**
+    envVariables:
+      # Vite bakes this into the bundle at build time.
+      VITE_API_BASE: ! VITE_API_BASE
+    git:
+      branch: main

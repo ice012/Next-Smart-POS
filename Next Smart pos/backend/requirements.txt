@@ -1,0 +1,4 @@
+# Render's Python builder auto-installs this file at the repo root before
+# running buildCommand. It simply forwards to the backend's pinned
+# requirements so there is a single source of truth.
+-r backend/requirements.txt
