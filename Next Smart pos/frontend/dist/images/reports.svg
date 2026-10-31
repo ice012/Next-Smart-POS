@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 600" width="960" height="600" role="img" aria-label="Financial reports screen">
+  <defs>
+    <linearGradient id="nav4" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#062B5C"/>
+      <stop offset="1" stop-color="#087FF5"/>
+    </linearGradient>
+  </defs>
+  <rect width="960" height="600" fill="#F5F7FA"/>
+  <rect x="0" y="0" width="960" height="56" fill="url(#nav4)"/>
+  <circle cx="34" cy="28" r="12" fill="#16C784"/>
+  <text x="56" y="34" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700" fill="#FFFFFF">SmartBiz</text>
+  <g font-family="Segoe UI, Arial, sans-serif">
+    <text x="40" y="106" font-size="24" font-weight="700" fill="#0F172A">Profit &amp; loss</text>
+    <text x="40" y="132" font-size="14" fill="#64748B">January 2026 &#183; exported to PDF or CSV</text>
+    <g>
+      <rect x="760" y="80" width="160" height="40" rx="8" fill="#087FF5"/>
+      <text x="840" y="106" font-size="14" font-weight="600" fill="#FFFFFF" text-anchor="middle">Export PDF</text>
+      <rect x="600" y="80" width="140" height="40" rx="8" fill="#FFFFFF" stroke="#E2E8F0"/>
+      <text x="670" y="106" font-size="14" font-weight="600" fill="#062B5C" text-anchor="middle">Export CSV</text>
+    </g>
+    <rect x="40" y="152" width="560" height="330" rx="10" fill="#FFFFFF" stroke="#E2E8F0"/>
+    <text x="60" y="184" font-size="16" font-weight="600" fill="#0F172A">Income</text>
+    <rect x="60" y="200" width="520" height="1" fill="#E2E8F0"/>
+    <g font-size="14">
+      <text x="60" y="232" fill="#0F172A">Sales revenue</text>
+      <text x="500" y="232" fill="#0F172A" font-weight="600">KSh 1,240,000</text>
+      <text x="60" y="264" fill="#0F172A">Other income</text>
+      <text x="500" y="264" fill="#0F172A" font-weight="600">KSh 35,000</text>
+      <rect x="60" y="284" width="520" height="1" fill="#E2E8F0"/>
+      <text x="60" y="312" fill="#0F172A" font-weight="700">Total income</text>
+      <text x="500" y="312" fill="#16C784" font-weight="700">KSh 1,275,000</text>
+      <text x="60" y="360" fill="#0F172A" font-weight="600">Cost of goods sold</text>
+      <text x="500" y="360" fill="#0F172A" font-weight="600">KSh 712,400</text>
+      <text x="60" y="392" fill="#0F172A" font-weight="600">Operating expenses</text>
+      <text x="500" y="392" fill="#0F172A" font-weight="600">KSh 268,900</text>
+      <rect x="60" y="412" width="520" height="1" fill="#E2E8F0"/>
+      <text x="60" y="444" fill="#0F172A" font-weight="700">Net profit</text>
+      <text x="500" y="444" fill="#16C784" font-weight="700">KSh 293,700</text>
+    </g>
+    <rect x="620" y="152" width="300" height="330" rx="10" fill="#FFFFFF" stroke="#E2E8F0"/>
+    <text x="640" y="184" font-size="16" font-weight="600" fill="#0F172A">Revenue mix</text>
+    <circle cx="770" cy="300" r="86" fill="none" stroke="#E2E8F0" stroke-width="34"/>
+    <path d="M770 300 L770 214 A86 86 0 0 1 849 364 Z" fill="#087FF5"/>
+    <path d="M770 300 L849 364 A86 86 0 0 1 691 364 Z" fill="#16C784"/>
+    <text x="770" y="296" font-size="20" font-weight="700" fill="#0F172A" text-anchor="middle">1.27M</text>
+    <text x="770" y="318" font-size="12" fill="#64748B" text-anchor="middle">total income</text>
+    <g font-size="12" fill="#64748B">
+      <rect x="648" y="424" width="12" height="12" rx="3" fill="#087FF5"/>
+      <text x="668" y="434">Products 58%</text>
+      <rect x="790" y="424" width="12" height="12" rx="3" fill="#16C784"/>
+      <text x="810" y="434">Services 42%</text>
+    </g>
+    <rect x="40" y="500" width="880" height="56" rx="10" fill="#062B5C"/>
+    <text x="64" y="534" font-size="15" font-weight="600" fill="#FFFFFF">Reports included:</text>
+    <text x="230" y="534" font-size="14" fill="#C7DBF5">Profit &amp; loss &#183; Sales &#183; Expenses &#183; Aging &#183; Cash flow &#183; Inventory valuation</text>
+  </g>
+</svg>
